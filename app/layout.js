@@ -14,6 +14,7 @@ export const metadata = {
     description: 'Clothing recommendations shaped around your personal style.', url: siteUrl,
   },
   twitter: { card: 'summary_large_image', title: 'PrimeFit — Your Personal Style, Refined', description: 'A more personal way to discover what to wear.' },
+  other: { 'cuelinks-verification': 'VERIFY-CL-XSNCDUAP' },
 };
 
 export default function RootLayout({ children }) {
