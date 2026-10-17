@@ -1,0 +1,3 @@
+import AuthPanel from '../../components/AuthPanel';
+export const metadata = { alternates: { canonical: '/login' }, title: 'Sign in or create an account', description: 'Sign in to PrimeFit to keep your style profile available across devices. Creating an account is optional.' };
+export default function LoginPage() { return <section className="page-shell auth-page"><div className="page-intro"><p className="eyebrow">YOUR STYLE, KEPT CLOSE</p><h1>Welcome <em>back.</em></h1><p>Sign in to sync your style profile across devices. You can also keep exploring without an account.</p></div><AuthPanel /></section>; }

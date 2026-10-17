@@ -1,0 +1,3 @@
+import StyleProfileWizard from '../../components/StyleProfileWizard';
+export const metadata = { alternates: { canonical: '/my-style' }, title: 'My Style Profile', description: 'Build your personal style profile to get clothing recommendations shaped around your fit, preferences, budget and occasions.', robots: { index: true, follow: true } };
+export default function MyStylePage() { return <section className="page-shell"><div className="page-intro"><p className="eyebrow">YOUR PERSONAL STYLE PROFILE</p><h1>Let's make it <em>you.</em></h1><p>Choose what matters. Skip what doesn't. You can update your answers any time.</p></div><StyleProfileWizard /></section>; }

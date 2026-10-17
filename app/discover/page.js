@@ -1,0 +1,3 @@
+import DiscoverProducts from '../../components/DiscoverProducts';
+export const metadata = { alternates: { canonical: '/discover' }, title: 'Discover Your Edit', description: 'Explore menswear selected against your personal style preferences, fit, budget and occasion.' };
+export default function DiscoverPage() { return <section className="page-shell discover-page"><div className="page-intro"><p className="eyebrow">YOUR PERSONAL EDIT</p><h1>Less searching.<br /><em>More you.</em></h1><p>Products appear here when they match your saved style profile. No made-up listings, no filler.</p></div><DiscoverProducts /></section>; }
