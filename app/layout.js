@@ -37,6 +37,8 @@ export const metadata = {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
     other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } : undefined,
   },
+  // Cuelinks site ownership verification (required for affiliate approval).
+  other: { 'cuelinks-verification': 'VERIFY-CL-WHUKJSBK' },
 };
 
 export const viewport = { themeColor: '#29352d', width: 'device-width', initialScale: 1 };
