@@ -40,6 +40,9 @@ export default function SiteHeader() {
           <span className="nav-label">Occasions <span className="chevron">⌄</span></span>
           <div className="dropdown-panel">{occasions.map((item) => <Link key={item.label} href={item.href}>{item.label}<span>↗</span></Link>)}</div>
         </div>
+        <Link className={`${navClass('/deals')} nav-deals`} href="/deals">Deals</Link>
+        <Link className={pathname?.startsWith('/shop') ? 'is-active' : ''} href="/shop">Shop</Link>
+        <Link className={navClass('/alerts')} href="/alerts">Deal alerts</Link>
         <Link className={navClass('/discover')} href="/discover">Your edit</Link>
         <Link className={navClass('/my-style')} href="/my-style">Style profile</Link>
         <Link className={pathname?.startsWith('/style-guide') ? 'is-active' : ''} href="/style-guide">Style guides</Link>

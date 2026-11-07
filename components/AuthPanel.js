@@ -18,7 +18,9 @@ export default function AuthPanel() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
-  const next = params.get("next")?.startsWith("/") ? params.get("next") : "/discover";
+  // Same-site paths only: "//evil.com" or "/\evil.com" would send users off-site after login.
+  const rawNext = params.get("next") || "";
+  const next = /^\/(?![/\\])/.test(rawNext) ? rawNext : "/discover";
 
   useEffect(() => {
     if (ready && user) router.replace(next);

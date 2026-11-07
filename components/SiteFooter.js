@@ -17,6 +17,9 @@ export default function SiteFooter() {
       <nav className="footer-col" aria-label="PrimeFit">
         <strong>PrimeFit</strong>
         <Link href="/my-style">Get styled</Link>
+        <Link href="/deals">Today's deals</Link>
+        <Link href="/alerts">Deal alerts on WhatsApp</Link>
+        <Link href="/shop">Shop by colour &amp; budget</Link>
         <Link href="/discover">Your edit</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>

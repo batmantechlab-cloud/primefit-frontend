@@ -3,6 +3,7 @@ import './globals.css';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import { AuthProvider } from '../components/AuthProvider';
+import StylistChat from '../components/StylistChat';
 import { SITE_NAME, jsonLd, siteUrl } from '../lib/site';
 
 const sans = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-sans', display: 'swap' });
@@ -70,7 +71,7 @@ export default function RootLayout({ children }) {
   return <html lang="en-IN" className={`${sans.variable} ${display.variable} ${serif.variable}`}>
     <body>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organization)} />
-      <AuthProvider><SiteHeader /><main>{children}</main><SiteFooter /></AuthProvider>
+      <AuthProvider><SiteHeader /><main>{children}</main><SiteFooter /><StylistChat /></AuthProvider>
     </body>
   </html>;
 }

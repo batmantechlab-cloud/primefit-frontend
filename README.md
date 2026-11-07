@@ -79,7 +79,7 @@ Included:
 - Accessible labels, keyboard focus styles, reduced-motion support, responsive layout and no fabricated products.
 
 Before publishing:
-1. Set `NEXT_PUBLIC_SITE_URL` to your real HTTPS domain.
+1. Set `NEXT_PUBLIC_` to your real HTTPS domain.
 2. Replace policy copy as needed to match the actual company, data flows, jurisdiction and services. The policy pages are a starting draft, not legal advice.
 3. Ensure Contact submissions really work and provide a monitored contact route. Do not publish invented contact details.
 4. Verify the real Cuelinks publisher requirements, website ownership, disclosure wording and any rules for product feeds/deep links. Approval is not guaranteed by the design.

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { PLATFORM_NAMES, apiUrl, formatPrice } from '../lib/api';
 
@@ -25,7 +26,8 @@ export default function ProductCard({ product, index = 0 }) {
       <span className="card-spotlight" />
       <div className="card-badges">
         {product.matchPercent ? <span className="match-badge"><i style={{ '--p': product.matchPercent }} />{product.matchPercent}% your style</span> : null}
-        {product.discountPercent >= 10 && <span className="discount-badge">−{product.discountPercent}%</span>}
+        {product.discountPercent >= 10 ? <span className="discount-badge">−{product.discountPercent}%</span>
+          : product.valueTag === 'Great price' ? <span className="discount-badge value-badge">Great price</span> : null}
       </div>
       {product.matchReason && <span className="match-tag">{product.matchReason}</span>}
       {product.reasons?.length > 1 && <ul className="card-reasons">{product.reasons.map((reason) => <li key={reason}>{reason}</li>)}</ul>}
@@ -33,12 +35,14 @@ export default function ProductCard({ product, index = 0 }) {
     </a>
     <div className="product-details">
       <div className="product-meta-row"><span className="product-brand">{product.brand || product.category}</span>{store.toLowerCase() !== (product.brand || '').toLowerCase() && <span className="platform-pill">{store}</span>}</div>
-      <h2 title={product.name}>{product.name}</h2>
+      <h2 title={product.name}><Link href={`/p/${product.id}`}>{product.name}</Link></h2>
       <div className="product-price-row">
         <strong>{formatPrice(product.price)}</strong>
         {product.originalPrice > product.price && <s>{formatPrice(product.originalPrice)}</s>}
+        {product.originalPrice > product.price && <span className="save-amount">Save {formatPrice(product.originalPrice - product.price)}</span>}
         {product.rating ? <span className="product-rating">★ {product.rating.toFixed(1)}{product.ratingCount ? <em> ({product.ratingCount >= 1000 ? `${(product.ratingCount / 1000).toFixed(1)}k` : product.ratingCount})</em> : null}</span> : null}
       </div>
+      {product.qualityTag && <div className="product-actions-row"><span className="quality-pill">{product.qualityTag}</span></div>}
     </div>
   </article>;
 }
